@@ -50,11 +50,19 @@
   }
   .card__views {
     margin: 5.8rem auto 4.2rem;
+    font-size: 1.4rem;
   }
   .card__payment-wrapper {
     grid-row: 1;
     grid-column: 2 / 3;
     margin: 4rem auto 2.4rem;
+  }
+  .card__range-value {
+    font-size: 4rem;
+    letter-spacing: -1px;
+  }
+  .card__per-month {
+    font-size: 1.6rem;
   }
   .card__input {
     grid-column: 1 / -1;
