@@ -5,3 +5,9 @@
   z-index: -1;
   height: 50%;
 }
+
+@media screen and (min-width: 700px) {
+  .background {
+    height: 60%;
+  }
+}

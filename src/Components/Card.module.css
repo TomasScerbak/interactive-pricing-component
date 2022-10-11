@@ -4,3 +4,63 @@
   box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.152073);
   background-color: var(--white);
 }
+
+.card__grid {
+  display: grid;
+}
+
+.card__views {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--grayish-blue);
+  letter-spacing: 1.71429px;
+  margin: 3.4rem auto 2.5rem;
+}
+
+.card__input {
+  margin: 2.5rem;
+}
+
+.card__payment-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2.4rem auto 3.4rem;
+}
+
+.card__range-value {
+  font-weight: 800;
+  font-size: 3.2rem;
+  letter-spacing: -0.8px;
+  color: var(--dark-desaturated-blue);
+  margin-right: 1rem;
+}
+
+.card__per-month {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--grayish-blue);
+}
+
+@media screen and (min-width: 700px) {
+  .card {
+    min-width: 54rem;
+    min-height: 39.7rem;
+  }
+  .card__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card__views {
+    margin: 5.8rem auto 4.2rem;
+  }
+  .card__payment-wrapper {
+    grid-row: 1;
+    grid-column: 2 / 3;
+    margin: 4rem auto 2.4rem;
+  }
+  .card__input {
+    grid-column: 1 / -1;
+  }
+}
