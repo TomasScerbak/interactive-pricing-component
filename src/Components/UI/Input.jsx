@@ -4,15 +4,15 @@ import classes from "./Input.module.css";
 
 const rangeArray = [
   {
-    range: 1,
+    range: 0,
     price: 5,
   },
   {
-    range: 2,
+    range: 1,
     price: 16,
   },
   {
-    range: 3,
+    range: 2,
     price: 30,
   },
 ];
@@ -22,15 +22,14 @@ function Input() {
 
   const valueChangeHandler = (e) => {
     e.preventDefault();
-    console.log(e);
-    setValue(e.target.value - 1);
+    setValue(e.target.value);
   };
 
   return (
     <input
       className={classes["card__input"]}
       type="range"
-      value={value.range}
+      value={value.price}
       min={0}
       max={2}
       step={1}
