@@ -1,3 +1,88 @@
-.card__input {
+/* Webkit appearance of input */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 8px;
+  background: #ecf0fb;
+  border-radius: 8px;
+  background-image: linear-gradient(#a4f3eb, #ecf0fb);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
   margin: 2.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: var(--strong-cyan);
+  background-image: url(/src//Assets/icon-slider.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-position: center;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* Appearance reset supported in Mozzila */
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: var(--strong-cyan);
+  background-image: url(/src//Assets/icon-slider.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-position: center;
+}
+
+input[type="range"]::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* Appearance reset supported in IE */
+
+input[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: var(--strong-cyan);
+  background-image: url(/src//Assets/icon-slider.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-position: center;
+}
+
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+@media screen and (min-width: 700px) {
+  .card__input {
+    grid-column: 1 / -1;
+  }
 }
