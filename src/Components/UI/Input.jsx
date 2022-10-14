@@ -1,40 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import classes from "./Input.module.css";
 
-const rangeArray = [
-  {
-    range: 0,
-    price: 5,
-  },
-  {
-    range: 1,
-    price: 16,
-  },
-  {
-    range: 2,
-    price: 30,
-  },
-];
+const prices = [5, 16, 35];
 
 function Input() {
-  const [value, setValue] = useState(rangeArray[1].range);
+  const [value, setValue] = useState({ currentIndex: 0 });
 
   const valueChangeHandler = (e) => {
-    e.preventDefault();
-    setValue(e.target.value);
+    setValue((prev) => {
+      return { ...prev, currentIndex: e.target.value };
+    });
   };
 
+  console.log(value);
+
   return (
-    <input
-      className={classes["card__input"]}
-      type="range"
-      value={value.price}
-      min={0}
-      max={2}
-      step={1}
-      onChange={valueChangeHandler}
-    />
+    <div>
+      <input
+        className={classes["card__input"]}
+        type="range"
+        min={0}
+        max={2}
+        step={1}
+        value={value}
+        onChange={valueChangeHandler}
+      />
+      <div className="output">{prices[value.currentIndex]}</div>
+    </div>
   );
 }
 
