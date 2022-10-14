@@ -5,15 +5,13 @@ import classes from "./Input.module.css";
 const prices = [5, 16, 35];
 
 function Input() {
-  const [value, setValue] = useState({ currentIndex: 0 });
+  const [value, setValue] = useState({ currentIndex: 1 });
 
   const valueChangeHandler = (e) => {
     setValue((prev) => {
       return { ...prev, currentIndex: e.target.value };
     });
   };
-
-  console.log(value);
 
   return (
     <div>
