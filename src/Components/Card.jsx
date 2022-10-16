@@ -6,7 +6,7 @@ import InputCheckbox from "./UI/Input-checkbox";
 import CheckIcon from "../Assets/icon-check.svg";
 import Button from "./UI/Button";
 
-const prices = [5, 16, 35];
+const prices = [8, 13, 16, 24, 36];
 
 const Card = () => {
   const priceChangeHandler = (index) => {

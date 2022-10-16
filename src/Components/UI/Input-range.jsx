@@ -3,7 +3,7 @@ import { useState } from "react";
 import classes from "./Input-range.module.css";
 
 const InputRange = (props) => {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(2);
 
   const valueChangeHandler = (e) => {
     setValue(e.target.value);
@@ -15,7 +15,7 @@ const InputRange = (props) => {
       className={classes["card__input"]}
       type="range"
       min={0}
-      max={2}
+      max={4}
       step={1}
       value={value}
       onChange={valueChangeHandler}
