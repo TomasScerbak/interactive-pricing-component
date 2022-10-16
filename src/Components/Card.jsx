@@ -11,13 +11,35 @@ const prices = [8, 13, 16, 24, 36];
 const Card = () => {
   const priceChangeHandler = (index) => {
     const price = document.getElementById("price");
+    const views = document.getElementById("views");
     price.innerHTML = `$${prices[index].toFixed(2)}`;
+    views.innerHTML = "test";
+
+    if (index === "0") {
+      views.innerHTML = "10K pageviews";
+    } else if (index === "1") {
+      views.innerHTML = "50K pageviews";
+    } else if (index === "2") {
+      views.innerHTML = "100K pageviews";
+    } else if (index === "3") {
+      views.innerHTML = "500K pageviews";
+    } else if (index === "4") {
+      views.innerHTML = "1M pageviews";
+    }
   };
+
+  //   - 10K pageviews / $8 per month
+  // - 50K pageviews / $12 per month
+  // - 100K pageviews / $16 per month
+  // - 500k pageviews / $24 per month
+  // - 1M pageviews / $36 per month
 
   return (
     <div className={classes.card}>
       <div className={classes["card__grid"]}>
-        <div className={classes["card__views"]}>100K previews</div>
+        <div id="views" className={classes["card__views"]}>
+          100K pageviews
+        </div>
         <InputRange onPriceChange={priceChangeHandler} />
         <div className={classes["card__payment-wrapper"]}>
           <span id="price" className={classes["card__range-value"]}>
