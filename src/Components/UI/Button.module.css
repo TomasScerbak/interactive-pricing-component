@@ -6,6 +6,7 @@
   padding: 1.2rem 4.3rem;
   border-radius: 20.5px;
   margin: 3.2rem auto;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 700px) {
