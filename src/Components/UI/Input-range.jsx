@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import classes from "./Input.module.css";
+import classes from "./Input-range.module.css";
 
-const Input = (props) => {
+const InputRange = (props) => {
   const [value, setValue] = useState(1);
 
   const valueChangeHandler = (e) => {
@@ -23,4 +23,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export default InputRange;
