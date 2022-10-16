@@ -99,6 +99,7 @@ input:checked + .slider:before {
   -webkit-transform: translateX(2rem);
   -ms-transform: translateX(2rem);
   transform: translateX(2rem);
+  background-color: var(--strong-cyan);
 }
 
 .month,
