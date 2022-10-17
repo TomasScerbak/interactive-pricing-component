@@ -13,7 +13,6 @@ const Card = () => {
     const price = document.getElementById("price");
     const views = document.getElementById("views");
     price.innerHTML = `$${prices[index].toFixed(2)}`;
-    views.innerHTML = "test";
 
     if (index === "0") {
       views.innerHTML = "10K pageviews";
