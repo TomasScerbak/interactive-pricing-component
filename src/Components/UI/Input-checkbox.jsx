@@ -14,7 +14,6 @@ const InputCheckbox = () => {
   };
 
   const discountChangeHandler = () => {
-    console.log(value);
     const price = document.getElementById("price");
 
     if (!checked) {
