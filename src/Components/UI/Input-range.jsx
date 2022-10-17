@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { useContext } from "react";
+import InputRangeContext from "../../Contexts/inputrange-context";
 
 import classes from "./Input-range.module.css";
 
-const InputRange = (props) => {
-  const [value, setValue] = useState(2);
+const InputRange = () => {
+  let { value, setValue } = useContext(InputRangeContext);
 
   const valueChangeHandler = (e) => {
-    setValue(e.target.value);
-    props.onPriceChange(e.target.value);
+    const views = document.getElementById("views");
+    setValue((value = e.target.value));
+
+    if (value === "0") {
+      views.innerHTML = "10K pageviews";
+    } else if (value === "1") {
+      views.innerHTML = "50K pageviews";
+    } else if (value === "2") {
+      views.innerHTML = "100K pageviews";
+    } else if (value === "3") {
+      views.innerHTML = "500K pageviews";
+    } else if (value === "4") {
+      views.innerHTML = "1M pageviews";
+    }
   };
 
   return (

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import InputRangeContext from "../../Contexts/inputrange-context";
 
 import classes from "./Input-checkbox.module.css";
 
@@ -6,25 +7,19 @@ const prices = [8, 13, 16, 24, 36];
 const discountPrice = prices.map((price) => price - (price / 100) * 25);
 
 const InputCheckbox = () => {
-  const [checked, setIsChecked] = useState(true);
+  let { value, checked, setIsChecked } = useContext(InputRangeContext);
 
-  const isCheckedHandler = () => {
-    setIsChecked((prev) => (prev ? false : true));
+  const isCheckedHandler = (e) => {
+    setIsChecked((checked = e.target.checked));
+    console.log(checked);
   };
 
   const discountChangeHandler = () => {
     const price = document.getElementById("price");
-
-    if (price.innerHTML === "$8.00" && checked === true) {
-      price.innerHTML = `$${discountPrice[0].toFixed(2)}`;
-    } else if (price.innerHTML === "$13.00" && checked === true) {
-      price.innerHTML = `$${discountPrice[1].toFixed(2)}`;
-    } else if (price.innerHTML === "$16.00" && checked === true) {
-      price.innerHTML = `$${discountPrice[2].toFixed(2)}`;
-    } else if (price.innerHTML === "$24.00" && checked === true) {
-      price.innerHTML = `$${discountPrice[3].toFixed(2)}`;
-    } else if (price.innerHTML === "$36.00" && checked === true) {
-      price.innerHTML = `$${discountPrice[4].toFixed(2)}`;
+    if (checked) {
+      price.innerHTML = `$${discountPrice[value].toFixed(2)}`;
+    } else {
+      price.innerHTML = `$${prices[value].toFixed(2)}`;
     }
   };
 
