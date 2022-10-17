@@ -11,12 +11,13 @@ const InputCheckbox = () => {
 
   const isCheckedHandler = (e) => {
     setIsChecked((checked = e.target.checked));
-    console.log(checked);
   };
 
   const discountChangeHandler = () => {
+    console.log(value);
     const price = document.getElementById("price");
-    if (checked) {
+
+    if (!checked) {
       price.innerHTML = `$${discountPrice[value].toFixed(2)}`;
     } else {
       price.innerHTML = `$${prices[value].toFixed(2)}`;
